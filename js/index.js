@@ -7,8 +7,8 @@ const matrix = [];
 
 function isValid(value, x, y){
     for(let i = 0; i<9; ++i){
-        if(matrix[x][i] == value) return false;
-        if(matrix[i][y] == value) return false;
+        if(matrix[x][i].value == value) return false;
+        if(matrix[i][y].value == value) return false;
     }
     return true;
 }
@@ -39,8 +39,8 @@ function renderGrid() {
 
       if (e.code === "Backspace") {
         cell.value = "";
-        console.log(cell.previousSibling);
-        cell.previousSibling?.focus();
+        if(cell.id === "cell-00") return;
+        cell.previousSibling.focus();
         return;
       }
 
@@ -54,6 +54,7 @@ function renderGrid() {
 
         cell.value = e.code[5];
       }
+      if(cell.id === "cell-88") return;
       cell.nextSibling?.focus();
     });
   });
