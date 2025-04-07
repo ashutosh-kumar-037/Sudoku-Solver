@@ -15,8 +15,19 @@
 
         </div>
         <div class="controller">
-            <button id="clear" class="secondary">Clear</button>
-            <button id="solve" class="primary">Solve</button>
+            <button  
+                onclick="clearGrid()" 
+                class="secondary"
+            >
+                Clear
+            </button>
+            <button 
+                onclick="solveSudoku()" 
+                class="primary"
+            >
+                Solve
+                <img class="icon loader" src="./assets/icons/loader-circle-2.svg" alt="">
+            </button>
         </div>
     </div>
 </body>

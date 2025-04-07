@@ -76,6 +76,15 @@ button{
   font-weight: bold;
   font-size: 20px;
   transition: all .3s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+button .icon{
+  width: 18px;
+  aspect-ratio: 1;
 }
 
 button.primary{
@@ -92,6 +101,28 @@ button:hover{
   filter: brightness(0.9);
   transform: scale(1.05);
 }
+button:disabled{
+  filter: brightness(0.5);
+  position: relative;
+}
+
 .controller button{
   flex: 1;
+}
+button .loader{
+  display: none;
+}
+button:disabled .loader{
+  display: block;;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
