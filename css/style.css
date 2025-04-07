@@ -19,6 +19,110 @@
   --card-secondary: #222;
 }
 body {
+  text-align: center;
   min-height: 100svh;
   width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+}
+
+.container{
+  width: min-content;
+}
+
+.grid{
+  aspect-ratio: 1;
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  border: 2px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cell{
+  background-color: transparent;
+  outline: none;
+  border: 1px solid rgb(45, 45, 45);
+  aspect-ratio: 1;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cell:focus{
+  outline: 3px solid rgb(105, 105, 149);
+  z-index: 10;
+  position: relative;
+  background-color: rgba(131, 131, 173, 0.322);
+}
+
+.controller{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+button{
+  padding: 16px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all .3s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+button .icon{
+  width: 18px;
+  aspect-ratio: 1;
+}
+
+button.primary{
+  background-color: hsl(190, 56%, 39%);
+  box-shadow: inset 0px -5px 0 hsl(190, 61%, 28%);
+  color: white;;
+}
+button.secondary{
+  background-color: hsl(190, 0%, 22%);
+  box-shadow: inset 0px -5px 0 hsl(190, 0%, 15%);
+  color: white;
+}
+button:hover{
+  filter: brightness(0.9);
+  transform: scale(1.05);
+}
+button:disabled{
+  filter: brightness(0.5);
+  position: relative;
+}
+
+.controller button{
+  flex: 1;
+}
+button .loader{
+  display: none;
+}
+button:disabled .loader{
+  display: block;;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

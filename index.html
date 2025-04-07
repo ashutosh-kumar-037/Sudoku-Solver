@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="./css/utils.css">
 </head>
 <body>
-    <h1>Sudoku solver</h1>
+    <div class="container">
+        <h1>Sudoku solver</h1>
+        <div class="grid">
+
+        </div>
+        <div class="controller">
+            <button  
+                onclick="clearGrid()" 
+                class="secondary"
+            >
+                Clear
+            </button>
+            <button 
+                onclick="solveSudoku()" 
+                class="primary"
+            >
+                Solve
+                <img class="icon loader" src="./assets/icons/loader-circle-2.svg" alt="">
+            </button>
+        </div>
+    </div>
 </body>
+<script src="./js/index.js"></script>
 </html>
